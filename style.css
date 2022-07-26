@@ -1,0 +1,97 @@
+/* @font-face {
+  font-family: Mohave;
+  src: url(mohave-light.woff2), url(mohave-light.woff);
+} */
+
+/* @font-face {
+  font-family: Mohave;
+  font-weight: 700;
+  src: url(mohave-bold.woff2), url(mohave-bold.woff);
+} */
+
+:root {
+  --background: #f3f3f5;
+  --text-color: black;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+
+  background-color: var(--background);
+  color: var(--text-color);
+  margin: 160px auto 80px auto;
+  width: 800px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px 24px 48px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  max-width: 400px;
+  background-image: url(temp.svg);
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+  background-position: 0 50%;
+  padding: 0 0 0 200px;
+}
+
+text {
+  fill: var(--text-color);
+  text-anchor: end;
+}
+
+text.country {
+  font-size: 15px;
+  font-weight: 300;
+  fill: #7d34eb;
+}
+
+text.city {
+  font-size: 25px;
+  font-weight: 700;
+  fill: #30125c;
+}
+
+text.temp {
+  text-anchor: middle;
+  dominant-baseline: middle;
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 0;
+}
+
+circle {
+  fill: var(--text-color);
+  opacity: 0;
+}
+
+path {
+  stroke: var(--text-color);
+  stroke-width: 2px;
+  fill: none;
+}
+
+g.data-point:hover circle {
+  opacity: 1;
+}
+
+g.data-point:hover text.temp {
+  opacity: 1;
+}
+
+g.data-point:hover path {
+  opacity: 0;
+}
